@@ -1,0 +1,15 @@
+Anotações video aula JS(variáveis) 
+//  var n1 = 2;
+//  var n2 = 3;
+// var n3 = n1 + n2;
+// alert(n3);
+var nome, sobrenome, nomeCompleto, idade, pessoa, soma;
+nome = "Mateus";
+sobrenome = "Barros"; 
+nomeCompleto = nome +" "+ sobrenome ;
+idade = 30;
+soma = idade + 10
+// pessoa = nome + idade + 10 ;
+pessoa = nome + " " + soma;
+document.getElementById('texto2').innerHTML = pessoa;
+// Não é recomendado concatenar(juntar) string com número

@@ -1,0 +1,81 @@
+/* MANIPULAR DATAS EM JAVASCRIPT */
+
+//Comando base para pegar a data
+let data1 = new Date();
+//console.log(data1);
+
+//Pegar o ano atual com 4 digitos
+let ano_ = data1.getFullYear();
+// alert(ano_);
+
+//Pegar o mês atual - de 0 até 11 sendo janeiro 0 e 11 dezembro
+let mes = data1.getMonth();
+// alert(mes);
+
+//Mostar o mês no formato escrito
+const mesesDoAno = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro","Outubro", "Novembro", "Dezembro"]; 
+let mesEscrito = mesesDoAno[data1.getMonth()];
+// alert(mesEscrito);
+
+//Pegar dia do mês - 1 até 31
+let diaMes = data1.getDate();
+// alert(diaMes);
+
+//Pegar dia da semana - 0 até 6
+let diaSemana = data1.getDay();
+const  diasDaSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta","Sexta","Sábado"];
+let diaSemanaEscrito = diasDaSemana[data1.getDay()];
+console.log(diaSemanaEscrito);
+
+//Pegar a hora - 0 até 23
+let hora1 = data1.getHours();
+// console.log(hora1);
+
+//Pegar os minutos - 0 até 59
+let minutos = data1.getMinutes();
+// console.log(minutos);
+
+//Pegar segundos - 0 até 59
+let segundos = data1.getSeconds();
+console.log(segundos);
+
+//Pegar Milisegundos - 0 até 999
+let milisegundos = data1.getMilliseconds();
+// console.log(milisegundos);
+
+//Pegar a data no padrão brasileiro - dia/mês/ano 
+let dataBR = data1.toLocaleString('pt-BR', {dataStyle : 'short'});
+console.log(dataBR);
+
+//Pegar os valores separados e juntá-los
+d1 = new Date();
+diaMes1 = d1.getDate();
+mes1 = d1.getMonth() + 1;
+anoo = d1.getFullYear();
+
+function addZero(t){
+	return t < 10 ? '0'+t : ''+t;
+};
+
+let dataPadraoBR = addZero(diaMes1) + "/" + addZero(mes1) + "/" + anoo;
+console.log(dataPadraoBR);
+
+//Comparar datas - Maior ou Menor. EX: Vencimentos
+var hoje = new Date();
+var vencimento = new Date(2022, 11, 15);
+
+if (hoje >vencimento) {
+	console.log("Sua conta está vencida!");
+}else{
+	console.log("Ainda não venceu, tudo certo!");
+};
+
+
+//Diferença entre duas datas em dias
+var dataInicial = new Date();
+var dataFinal = new Date(2023, 11, 31)
+
+var diferencaTempo = dataFinal.getTime() - dataInicial.getTime();
+
+var diferencaDias = Math.ceil(diferencaTempo /(24 * 60 * 60 * 1000));
+	console.log(diferencaDias + " dias");

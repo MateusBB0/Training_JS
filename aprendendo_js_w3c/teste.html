@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Teste JS</title>
+</head>
+<body>
+
+	<p id="paragraph">Olá mundo</p>
+	<button type="button" onclick="Func()">Click</button>
+	<br>
+	<!-- InnerText ou InnerHTML(mais versátil e mais usado) -->
+	<p id="demo"></p>
+	<p id="demo2"></p>
+	<p id="demo3"></p>
+
+
+
+	<!-- Document.write() - usado para teste e deleta todo o Html existente -->
+	<button type="button" onclick="document.write(1+1)">Fim</button><br><br>
+
+	<!-- window.alert() - caixa de alerta -->
+	<button type="button" onclick="window.alert('Página teste')">Alert</button><br><br>
+
+	<!-- console.log() - método no navegador para exibir dados -->
+	<script type="text/javascript">console.log(9+1);</script> 
+
+	<!-- window.print() - método no navegador para imprimir o conteúdo da janela atual -->
+	<button onclick="window.print()">Imprima/Salve esta página</button>
+
+	<!-- DECLARAÇÕES JS : Values, Operators, Expressions, Keywords, and Comments -->
+
+	<!-- Variáveis JS - var, let e const -->
+	<!-- 
+	Sempre declare variáveis JS.
+	Quando usar cada tipo de variável?
+	Use const quando o valor ou tipo não deve ser alterado(arrays e objetos);
+	Use let se não puder usar const;
+	Use var se precisar de suporte a navegadores antigos.
+	 -->
+	<p id="demo4"></p>
+	<p id="demo5"></p>
+	<p id="demo6"></p>
+
+
+	<script>
+		let x, y;
+		x = 5;
+		y = 6;
+		Soma = x + y;
+		document.getElementById('demo4').innerHTML = "Valor: " + Soma;
+		let Person = "Mateus Barros",
+		 idade = "18";
+
+		 let n ="5" + 4 + 3;
+		 document.getElementById('demo5').innerHTML = n;
+
+		 let n_ =  4 + 3 + "5";
+		 document.getElementById('demo6').innerHTML = n_;
+		 
+	</script>
+
+<!-- const JS - o valor desta variável não pode ser alterada -->
+<p id="demo7"></p>
+<p id="demo8"></p>
+<p id="demo9"></p>
+
+
+<script type="text/javascript">
+	const equip_redes = ['Cabo de rede', 'Alicate Crimpador', ' Conector RJ-45', ' Testador de cabo'];
+	// Pode alterar os elementos do array om const
+	equip_redes[0] = "Cabo ";
+	equip_redes.push(' Desencapador de cabo');
+	document.getElementById('demo7').innerHTML = equip_redes;
+
+	// Pode alterar as propriedades de um objeo const
+	const carro = {type:"Gol", modelo:"100", cor:"vermelho"};
+	carro.cor = "branco";
+	carro.dono = "Marcos";
+	document.getElementById('demo8').innerHTML = "O tipo do carro é " +carro.type + ", sua cor é " + carro.cor + ", o nome dono é " + carro.dono;
+	// Escopo de const
+	const p = 10;
+	// O p aqui é 10
+	{
+		const p = 2;
+	// O p aqui é 2
+
+	}
+	// O p aqui é 10
+
+	document.getElementById('demo9').innerHTML = alert(carNome);
+	const carNome = "do Danone";
+</script>
+
+<!-- Operadores JS  -->
+
+
+</body>
+
+<script>
+	let number1, number2;
+	number1 = 10;
+	number2 = (3 + 9) * 7;
+
+	let Nome, nome;
+	Nome = "Pedro";
+	Nome = "Paulo";
+
+
+	document.getElementById("demo").innerHTML = "Testando...";
+	document.getElementById("demo2").innerText = "Testando... testando...";
+
+	function Func() {
+		document.getElementById('paragraph').innerHTML = "Olá programador!!!!";
+	}
+
+	document.getElementById('demo3').innerHTML = "Mateus " + "Brasil" ;
+</script>
+</html>

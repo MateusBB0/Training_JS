@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Teste 4</title>
+</head>
+<body>
+	<!-- 22/05/25 -->
+	<!-- Eventos JS - O javascript, em html, pode reagir a eventos -->
+	<!-- Event Button -->
+	<p id="event_button" ></p>
+
+	<button onclick="actionDate()">Que tempo é?</button>
+	<p id="string" ></p>
+	<p id="string_length" ></p>
+	<p id="text_char"></p>
+	<p id="text_charCode"></p>
+	<p id="at"></p>
+	<p id="slice"></p>
+	<p id="substring_"></p>
+	<p id="uppertext"></p>
+	<p id="lowertext"></p>
+	<p id="concat"></p>
+	<p id="trimend"></p>
+	<p id="padded"></p>
+	<p id="padded2"></p>
+	<p id="repeat"></p>
+	<p id="replace"></p>
+	<p id="strArr"></p>
+
+
+		<script>
+		// Eventos JS
+		function actionDate() {
+			document.getElementById("event_button").innerHTML = Date();
+		}
+		// Strings
+		let text = "Nós,\"povo brasileiro\", somos uma grande nação!";
+		document.getElementById('string').innerHTML= text;
+		// Comprimento de string
+		let alphabet = "abcdefghijklmnopqrstuvwxyz";
+		let length = alphabet.length;
+		document.getElementById('string_length').innerHTML= length;
+
+		// 26/05/25
+		// Métodos de String
+		// .length = retorna o comprimento de uma string
+
+		// charAt() - Retorna um caractere específico de acordo com a posição dele. Sempre começa a contar no 0
+		let t = 'Hello world';
+		let char = t.charAt();
+		document.getElementById('text_char').innerHTML = char;
+
+		// charCodeAt()  - método que retorrna o código UTF-16 do caractere especificado 
+		let t2 = 'Olá Mundo';
+		let charCode = t.charCodeAt(0);
+		document.getElementById('text_charCode').innerHTML = charCode;
+
+		// at() - parecido com o método charAt(), mas dá para colocar índices negativos
+		let T = "Mateus";
+		let at = T.at(-1);
+		// Outra forma: let at = T[-1];
+		document.getElementById("at").innerHTML = at;
+
+		// slice() - extrai uma parte de uma string e retorna a parte. Os parâmetros são início e fim
+		let textslice = "Maçã, Banana, Kiwi";
+		let sliced = textslice.slice(6);
+		document.getElementById("slice").innerHTML = sliced; 
+
+		// substring() - semlhante ao slice(). A diferença entre os dois é que o substring(), quando um dos valores de início/fim são > 0, será tratado como 0.
+		// substr() não é mais tão usado
+		let str_sub = "Maçã, Banana, Kiwi";
+		let parte = str_sub.substring(0,13);
+
+		document.getElementById("substring_").innerHTML = parte;
+
+		// toUpperCase() e toLowerCase() - uma string é convertida em maiúscula ou minúscula.
+		let textCase = "olá mundo!";
+		let textCasetest = textCase.toUpperCase();
+
+		let textCase2 = "OLÁ MUNDOOOOOOO!";
+		let textCasetest2 = textCase.toLowerCase();
+
+		document.getElementById("uppertext").innerHTML = textCasetest;
+		document.getElementById("lowertext").innerHTML = textCasetest2;
+
+		// Concat() - basicamente um método de concatenação
+		let text_concat = "Oi,";
+		let text_concat2 = "tudo bem?";
+
+		let concatt = text_concat.concat(" ",text_concat2);
+		// let concatt = text_concat +" "+text_concat2; . É A MESMA COISA
+		document.getElementById('concat').innerText = concatt;
+
+		// trimEnd() ou trim() - revoe espaços em branco a partir do final de uma cadeia de caracteres
+		let textTrimEnd = "s       Olá mundo!!       s";
+		let textTrimEnd2 = textTrimEnd.trimEnd();
+
+		document.getElementById('trimend').innerHTML = textTrimEnd2;
+
+		// padStart() ou PadEnd() - preenche uma string com uma outra várias vezes. Não preenche um número, só se convertê-lo a string
+		let padText = "5";
+		let padded = padText.padStart(2, '0');
+		document.getElementById('padded').innerHTML = padded;
+		let padText2 = "5";
+		let padded2 = padText.padEnd(2, '0');
+		document.getElementById('padded2').innerHTML = padded2;
+
+		// repeat() - retorna uma string com um número de cópias da mesma
+		let text10 = "Mateus Barros B.";
+		let repeatResult = text10.repeat(3);
+		document.getElementById('repeat').innerHTML = repeatResult;
+
+		// replace() - substituir um valor por outro em uma string
+		let frase = "Olha aquele merda do Marcos.";
+		let Newfrase = frase.replace("merda", "lindo");
+		document.getElementById('replace').innerHTML = Newfrase;
+
+		// split() - converter uma string para uma matriz
+		let strToArray = "Olha";
+		const meuArray = strToArray.strToArray('');
+		document.getElementById("strArr").innerHTML = meuArray[0];
+
+
+	</script>
+</body>
+</html>

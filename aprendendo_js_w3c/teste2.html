@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Teste JS</title>
+</head>
+<body>
+	<!-- OPERADORES JS -->
+	<!-- Operadores aritméticos -->
+	<p id="demo"></p>
+	<script>
+		let x = 10, y = 4, k = 2;
+		let z = x + y;
+		let s = x - y;
+		let m = x * y;
+		let d = x / y;
+		let exponentiation = x**k;
+		let modulus = x%y;
+		// Incrementação
+		x++;
+		x1 = x;
+		y--;
+		y1 = y;
+
+		document.getElementById('demo').innerHTML = "Soma: "+ z + ", Subtração: " + s + ", Multiplicação: "+ m + ", Divisão: " + d + "Exponenciação: " + exponentiation + " Modulação: " + modulus + " Incrementação: "+ x1 + " Diminuição: " + y1;
+
+	</script>
+
+	<!-- Operadores de Atribuição -->
+	<p id="demo2"></p>
+	<script type="text/javascript">
+		let n1 = 10, n2 = 3;
+		n1 += 3;
+		n2 -= 3;
+		n1 *= 3;
+		n1 /= 3;
+
+
+
+
+		document.getElementById('demo2').innerHTML = "add: " + n1 ; 
+	</script>
+
+	<!-- Operadores de Comparação -->
+	<p id="demo3"></p>
+	<p id="demo4"></p>
+	
+
+<script type="text/javascript">
+	
+let	value = 10, value2 = 2, value3 = "3";
+let result = value > value2;
+let result_ = value <= value2;
+
+
+document.getElementById('demo3').innerHTML = "O valor " + value + " é maior que "+value2+ "? " + result;
+
+document.getElementById('demo4').innerHTML = "O valor " + value + " menor ou igual a "+value2+ "? " + result_;
+
+</script>
+
+<!-- Comparação de Strings -> em ordem alfabética!! -->
+
+<!-- Concatenar strings -->
+<p id="demo5"></p>
+<script>
+	let txt1 = "Mateus", txt2 = "Barros";
+	txt1 += " " + txt2;
+
+	document.getElementById('demo5').innerHTML = txt1;
+
+</script>
+<!-- OBS -> Exponenciação pode ser feita de outra forma: -->
+<p id="demo6"></p>
+<script type="text/javascript">
+	let p = 10;
+	let o = Math.pow(p,2);
+
+	document.getElementById('demo6').innerHTML = o;
+</script>
+</body>
+</html>

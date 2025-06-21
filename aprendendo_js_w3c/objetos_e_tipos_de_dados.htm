@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Teste 3</title>
+</head>
+<body>
+	<p id="exponen"></p>
+
+	<p id="boolean"></p>
+
+	<p id="array"></p>
+
+	<p id="objeto"></p>
+
+	<p id="typeof"></p>
+
+	<p id="funcao"></p>
+
+	<p id="funcao2"></p>
+
+	<p id="welcome_user"></p>
+
+	<p id="user"></p>
+
+	<p id="obj"></p>
+
+	<p id="obj_nome"></p>
+
+	<p id="obj_loop"></p>
+
+	<p id="obj_to_array"></p>
+
+	<p id="obj_json"></p>
+
+	<p id="constructor"></p>
+
+	<p id="constructor_method"></p>
+
+	<p id="constructor_prototype_method"></p>
+
+	<p id="constructor_prototype_propriety"></p>
+
+<script>
+	// TIPOS DE DADOS JS
+	let string1 = "Mateus B.B.";
+	let x1 = 34.1;
+	let x2 = 34;
+	let exponenciacao = 123e5;
+	// ARRAY
+	const array_carros = ['Renegade', 'Volksvagem', 'peugeot'];
+	// OBEJETO
+	const pessoa = {nome : 'Mateus', idade:17, cordosOlhos:'castanhos', sexo:"Masculino"};
+	// Variável indefinida
+	let danone = "morango"; danone = undefined;
+
+	document.getElementById('exponen').innerHTML = exponenciacao;
+	document.getElementById('boolean').innerHTML = (x1 == x2);
+	document.getElementById('array').innerHTML = "O carro " + array_carros[2] + " é horrível!";
+	document.getElementById('array').innerHTML = "O carro " + array_carros[2] + " é horrível!";
+	document.getElementById('objeto').innerHTML = pessoa.nome + " tem " + pessoa.idade + " anos.";
+
+	document.getElementById('typeof').innerHTML = 
+	typeof " 120" + "<br>"
+	+ typeof 120 + "<br>"
+	+ typeof pessoa + "<br>"
+	+ typeof " " + "<br>"
+	+ typeof danone;
+
+	let fun = calculo(9, 3, 2);
+	let fun2 = calculo(10, 5, 2)
+
+	let tocelsius = toCelsius(400);
+
+	// FUNÇÕES JS
+	function calculo(a, b, c) {
+		return (a * b) + c;
+	}
+
+	function toCelsius(kelvin){
+		return (kelvin - 273.15); 
+	}
+
+	document.getElementById('funcao').innerHTML = fun2; 
+	document.getElementById('funcao2').innerHTML = tocelsius; 
+
+	// Objetos JS - É um tipo de variável engloba métodos e atributos
+
+	const Account = {
+		name: "Mateus", 
+		type:"user", 
+		email:"mateus@gmail.com",
+		password: "123456",
+		myItems:{
+			item1:"PC",
+			item2:"Smartphone",
+			item3:"Watch"
+		}
+	};
+	document.getElementById('welcome_user').innerHTML = "Bem vindo a página " + Account.email;
+	document.getElementById('user').innerHTML = "Olá, meu nome é "+Account.name + " tenho um "+ Account.myItems.item1 + " da Nasa! ";
+
+
+	// Outra forma de criar objetos JS
+
+	// const Person = new Object();
+	// Person.name = "Marcos";
+	// Person.age = "18";
+	// Person.eyeColor = "castanhos";
+
+	const Person = {
+		// Propriedades ou atributos
+		name : "Marcos",
+		lastname : "Barros Brasil",
+	 	age : "18",	
+	 	eyeColor : "castanhos",
+	 	hair : "black",
+	 	// Métodos do objetos
+	 	fullName: function() {
+	 		return (this.name + " " + this.lastname).toUpperCase();
+	 		// toUpperCase() é um método que coloca todas as letras em maiúsculo
+	 	}
+
+
+	}
+	// excluir uma propriedade
+	delete Person.hair;
+
+document.getElementById('obj').innerHTML = Person.fullName()  + " tem "+ Person.age + " anos e olhos " +Person['eyeColor'] + " " + Person.hair;
+	
+	// Exibição de Objeto JS
+	
+	// Pelo nome
+	const carro = {
+		nome: 'Gol quadrado',
+		marca: 'Volksvagem',
+		cor: 'azul',
+		ano: '2001'
+	};
+
+document.getElementById('obj_nome').innerHTML = carro.nome + " é da marca " + carro.marca + ", sua cor é " + carro.cor + " e é de " + carro.ano;
+	
+	// Por um loop
+	let paragrafo = "";
+	for (let i in carro) {
+		// paragrafo += carro[i] + "<br> ";
+		paragrafo = paragrafo + carro[i] + "<br> ";
+
+	};
+
+document.getElementById('obj_loop').innerHTML = paragrafo;
+	
+	// Por object.values() - criar uma matriz para exibir as propriedades do objeto
+	const myArray = Object.values(carro);
+
+	document.getElementById('obj_to_array').innerHTML = myArray;
+
+	// Por JSON.stringify() converter os objetos em string por json
+	const convertionString = JSON.stringify(carro);
+
+	document.getElementById('obj_json').innerHTML = convertionString;
+
+	// Construct function - ajuda a criar objetos do mesmo tipo
+	function Pessoa(nome, sobrenome, idade, altura){
+		// Propriedades
+		this.primeiroNome = nome;
+		this.sobreNome = sobrenome;
+		this.idadePessoa = idade;
+		this.alturaPessoa = altura;
+		// Método
+		this.nomeCompleto = function () {
+			return this.primeiroNome +" "+ this.sobreNome;
+		}
+	}
+const meuIrmao = new Pessoa('Marcos', 'Barros ', 24, 178);
+const minhaIrma = new Pessoa('Jéssica', 'Barros', 33, 155);
+
+
+document.getElementById('constructor').innerHTML = "O nome do meu irmão é  " + meuIrmao.nomeCompleto();
+
+	// Adicionando um método a um objeto 
+	meuIrmao.aboutPerson = function(){
+		return this.primeiroNome +" tem " + this.alturaPessoa + " cm de altura";
+	}
+
+	document.getElementById('constructor_method').innerHTML = meuIrmao.aboutPerson();
+
+	// Adicionando mum método a classe que cria os objetos
+	Pessoa.prototype.characters = function() {
+		return "As características de " + this.primeiroNome + " são: idade - "+ this.idadePessoa + " , altura - " + this.alturaPessoa;
+	};
+
+document.getElementById('constructor_prototype_method').innerHTML = minhaIrma.characters();
+
+	// Adicionando um atributo ao construtor
+	Pessoa.prototype.nacionalidade = "Brasileiro(a)";
+
+	document.getElementById('constructor_prototype_propriety').innerHTML = "A nacionalidade de "+ minhaIrma.primeiroNome + " é " + minhaIrma.nacionalidade;
+
+</script>	
+
+
+</body>
+</html>

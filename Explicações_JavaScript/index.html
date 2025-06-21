@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aprendendo JavaScript</title>
+</head>
+<style>
+	body{
+		text-align: center;
+	}
+</style>
+<body onresize="console.log('Houve um redimencionamento')"> <!-- onmousedown="alert('clicou na tela')" onmousup="alert('clicou na tela')" onload="alert('Terminou de carregar')"-->
+
+<!-- JS interno e externo -->
+ <!-- <script src="script.js"></script>-->	
+ <!-- Sempre coloque o script antes de '</body>', para a página carregar mais rapidamente--> 
+
+ <!-- Tipos de saída: formas de apresentar um dado -->
+ <h1>Aprendendo JavaScript</h1>
+ <p id="texto"></p>
+ <p id="texto2"></p>
+ <p id="texto3"></p>
+ <p id="texto4"></p>
+ <p id="texto5"></p>
+ <p id="texto6"></p>
+ <p id="texto7"></p>
+ <p id="texto8"></p>
+ <p id="texto9"></p>
+<br>
+ <p id="texto10"></p> <br>
+<input style="padding: 20px; font-size: 15px;
+"type="text" id="nome" placeholder="Digite o seu nome" > <br> <br>
+<button onclick="verificar()" style="padding:20px">verificar</button>
+<br><br>
+<input style="padding: 20px; font-size: 15px;
+"type="text" id="cor" placeholder="Digite a sua cor" >
+ <br><br>
+<button onclick="verificaCor()" style="padding:20px">verificar</button>
+ <p id="texto11"></p><br>
+<br><br>
+<p id="texto12"></p><br>
+<input style="padding: 20px; font-size: 15px;
+"type="text" id="dia" placeholder="Digite o seu dia da semana" >
+ <br><br>
+<button onclick="diaDaSemana()" style="padding:20px">verificar</button>
+ 
+ <!-- <button onclick="eventoClick()">Clique aqui(onclick)</button> <br>
+<button ondblclick="eventoDblClick()">Clique aqui</button> <br><br> -->
+
+<select id="itens" onchange="mudou()">
+	<option value="1">Valor 1</option>
+	<option value="2">Valor 2</option>
+	<option value="3">Valor 3</option>
+	<option value="4">Valor 4</option>
+
+</select>
+<br> <br>
+<div id="teste" onmouseover="viraAzul()" onmouseout="viraVermelho()" style="margin: auto auto; width: 80%; height: 200px; background: red;">
+	
+</div>
+<br>
+<input onkeyup="teclaPressionada()" onblur="eventoClick()" onfocus="limpaTexto()" id="campo_texto" style="padding:50px; font-size:30px ;" placeholder="Digite algo" type="text" value="Já vem com texto">
+
+<p id="texto13"></p><br>
+<br><br>
+<select id="ano">
+	<option selected disabled>Selecione o ano</option>
+</select>
+<br><br>
+<p id="texto14"></p><br>
+
+<h2>JSON</h2>
+<pre id="area"></pre>
+<br>
+
+<input type="text" id="cep" placeholder="Digite seu cep">
+<button onclick="buscarCEP()">Buscar</button>
+<p id="texto_"></p>
+
+
+<!--  <p>
+ 	<script>
+ 		// document.write('Oi <u> escrito com document.write</u>');//uma forma de escrever em JS
+ 	</script>
+ </p>
+  -->
+ <script src="edit.js"></script>
+</body>
+</html>

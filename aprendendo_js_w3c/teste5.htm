@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Teste 5</title>
+</head>
+<body>
+
+	<p id="search"></p>	
+	<p id="search2"></p>	
+	<p id="match"></p>	
+	<p id="testestr"></p>
+	<p id="valorTotal"></p>
+	<script>
+		
+		// 30/05/25
+
+		// String search
+		// indexOf() -  retorna o índice(posição) da string ou retornará -1 se não for encontrada
+		let textt =  "Por favor, localize este celular 'localize' ";
+		let index = textt.indexOf("localize", 15);
+
+		let textt2 =  "Por favor, localize este celular 'localize' ";
+
+
+		let index2 = textt2.search("localize");
+		document.getElementById("search2").innerHTML = index2;
+		
+		// 02/06/25 
+
+		// Templates de string
+		// ${...} -  com isso, dá para colocar variáveis em strings
+		// Substituir variáveis em uma string
+		let primeiroNome = "Marcos", sobreNome = "B";
+		let nomeCompleto = `Olá ${primeiroNome} ${sobreNome}`;
+
+		document.getElementById('testestr').innerHTML = nomeCompleto;
+		// Permitir expressões em strings
+		let preco = 12, aumento = 0.5;
+		let valorTotal =`Total: ${(preco * (1 + aumento)).toFixed(2)} `;
+
+		document.getElementById('valorTotal').innerHTML = valorTotal;
+
+		
+
+	</script>
+</body>
+</html>
